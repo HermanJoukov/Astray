@@ -5,6 +5,25 @@
  * Licenced under the BSD License.
  * See https://raw.github.com/RobertWHurst/KeyboardJS/master/license.txt
  */
+
+window.onmessage = (event) => {
+    if (event.data) {
+        let receivedData = event.data;
+        if (receivedData == "65") {
+            activeKeys.push("left");
+            }
+        if (receivedData == "68") {
+            activeKeys.push("right");
+            }
+        if (receivedData == "66") {
+            activeKeys.push("up");
+            }
+        if (receivedData == "67") {
+            activeKeys.push("down");
+            }
+    }
+  }
+
 (function (context, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
